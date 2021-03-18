@@ -3,5 +3,6 @@ use diamond_square_lib::diamond_square::create_ds;
 
 fn main() {
     println!("Main Test");
-    create_ds(100);
+    let generated_data = create_ds();
+    println!("{:?}", generated_data);
 }
