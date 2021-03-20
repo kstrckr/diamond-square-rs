@@ -7,8 +7,8 @@ const TWO: u32 = 2;
 // const N: u32 = 14;
 // const DIMENSION: usize = 16385;
 
-const N: u32 = 8;
-const DIMENSION: usize = 257;
+const N: u32 = 9;
+const DIMENSION: usize = 513;
 
 pub fn create_ds() -> [u32; DIMENSION] {
   generate_ds(50)
@@ -35,7 +35,7 @@ pub fn generate_ds(upper_bound: u32) -> [u32; DIMENSION] {
         let target_index = (highest_index / pow) * j;
         let lower_source = target_index - index_offset;
         let upper_source = target_index + index_offset;
-        array[target_index as usize] = ((&array[lower_source as usize] + &array[upper_source as usize]) / 2) + rng.gen_range(0, upper_bound / 2);
+        array[target_index as usize] = ((&array[lower_source as usize] + &array[upper_source as usize]) / 2) + rng.gen_range(0, (upper_bound - i) / 2);
       }
     }
   }
