@@ -34,8 +34,8 @@ pub fn generate_ds(upper_bound: u32) -> [u32; DIMENSION] {
   for i in 1..N + 1 {
     let pow = TWO.pow(i);
     for j in 1..pow {
-      let index_offset = highest_index / pow;
       if j % 2 > 0 {
+        let index_offset = highest_index / pow;
         let target_index = (highest_index / pow) * j;
         let lower_source = target_index - index_offset;
         let upper_source = target_index + index_offset;
